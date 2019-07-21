@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('home');
 });
+
+Auth::routes();
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+// middleware('auth')->
