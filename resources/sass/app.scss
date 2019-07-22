@@ -81,3 +81,9 @@ body {
     }
   }
 }
+
+@include media-breakpoint-down(sm) {
+  .full-height {
+    height: auto;
+  }
+}
