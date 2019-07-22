@@ -53,7 +53,7 @@
         <hr />
         <div class="row">
             <div class="col">
-                <button class="btn btn-primary btn-lg">Send</button>
+                <button class="btn btn-primary btn-lg">{{ __('Send') }}</button>
             </div>
         </div>
     </div>
