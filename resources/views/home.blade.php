@@ -36,7 +36,7 @@
             <div class="choice selected row mt-2 mb-2">
                 <div class="key col-auto"><span>D</span></div>
                 <div class="title col">Javascript</div>
-                <div class="check col-auto"></div>
+                <div class="check col-auto"><i class="icon ion-md-checkmark"></i></div>
             </div>
         </div>
     </div>

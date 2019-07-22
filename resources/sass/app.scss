@@ -71,13 +71,25 @@ body {
     &.selected {
       border: 2px solid $darkGray;
       background-color: $lightGray;
+      position: relative;
+      padding-right: 2.5rem;
       > .key > span {
         background-color: $darkGray;
         color: #fff;
       }
+      > .check {
+        font-size: 2rem;
+        position: absolute;
+        right: 0;
+        top: -5px;
+        visibility: visible;
+      }
     }
     > .title {
       @include rfs(18);
+    }
+    > .check {
+      visibility: hidden;
     }
   }
 }
