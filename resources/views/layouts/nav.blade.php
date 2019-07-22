@@ -6,6 +6,12 @@
   <a href="{{ route('questions.index') }}">{{ __('Questions') }}</a>
   @endif
   @auth
+  <a href="{{ route('logout') }}"
+    onclick="event.preventDefault();
+    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+  </form>
   @else
   @if (Route::has('register'))
   <a href="{{ route('register') }}">{{ __('Register') }}</a>
