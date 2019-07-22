@@ -1,8 +1,83 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body {
+  background-color: #fff;
+  color: $gray;
+  font-family: $font-family-sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.links {
+  padding: 16px;
+  > a {
+    color: $gray;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.choices {
+  > .choice {
+    @include border-radius(4px);
+    border: 1px solid $gray;
+    padding: 4px;
+    cursor: pointer;
+    &:hover {
+      background-color: $lightGray;
+    }
+    > .key > span {
+      display: block;
+      margin-right: -15px;
+      margin-left: -15px;
+      @include border-radius(4px);
+      border: 1px solid $gray;
+      background-color: $lightGray;
+      text-align: center;
+    }
+    &.selected {
+      border: 2px solid $darkGray;
+      background-color: $lightGray;
+      > .key > span {
+        background-color: $darkGray;
+        color: #fff;
+      }
+    }
+    > .title {
+      @include rfs(18);
+    }
+  }
+}
