@@ -3,7 +3,7 @@
   @if (request()->route()->getName() == 'questions.index')
   <a href="{{ route('questions.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
   @endif
-  @if (request()->route()->getName() == 'home')
+  @if (in_array(request()->route()->getName(), ['home', 'questions.create']))
   <a href="{{ route('questions.index') }}">{{ __('Questions') }}</a>
   @else
   <a href="{{ route('home') }}">{{ __('Home') }}</a>
