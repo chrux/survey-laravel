@@ -50,6 +50,14 @@ body {
   }
 }
 
+.content {
+  padding-top: 60px;
+}
+
+.scrolleable {
+  overflow: auto;
+}
+
 .choices {
   > .choice {
     @include border-radius(4px);

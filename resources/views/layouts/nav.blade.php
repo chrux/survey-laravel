@@ -1,9 +1,12 @@
 @if (Route::has('login'))
 <div class="{{ $class }} links">
-  @if (request()->route()->getName() == 'login')
-  <a href="{{ route('home') }}">{{ __('Home') }}</a>
-  @else
+  @if (request()->route()->getName() == 'questions.index')
+  <a href="{{ route('questions.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
+  @endif
+  @if (request()->route()->getName() == 'home')
   <a href="{{ route('questions.index') }}">{{ __('Questions') }}</a>
+  @else
+  <a href="{{ route('home') }}">{{ __('Home') }}</a>
   @endif
   @auth
   <a href="{{ route('logout') }}"
