@@ -11,12 +11,12 @@
           </div>
           <div class="form-group row mt-3">
             <div class="col">
-              <input type="text" class="form-control" name="question[description]" :placeholder="$t('Description')">
+              <input type="text" class="form-control" name="question[description]" :placeholder="$t('(Optional) Description')">
             </div>
           </div>
           <div class="form-group row mt-3">
             <div class="col">
-              <input type="number" class="form-control" name="question[maxCheck]" aria-describedby="questionMaxCheck" :placeholder="$t('Default: 1. Maximum number of options to be selected')">
+              <input type="number" class="form-control" name="question[maxCheck]" aria-describedby="questionMaxCheck" :placeholder="$t('(Optional) Default: 1. Maximum number of options to be selected')">
               <small id="questionMaxCheck" class="form-text text-muted">
                 {{ $t('Enter 0 (zero) to do not limit the maximum.') }}
               </small>
