@@ -7,6 +7,12 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+// window.VueI18n = require('vue-i18n');
+import VueI18n from 'vue-i18n';
+
+Vue.use(VueI18n);
+
+const i18n = new VueI18n({ locale: 'en' });
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +25,10 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('form-option-item', require('./components/FormOptionItemComponent.vue').default);
+Vue.component('form-question', require('./components/FormQuestionComponent.vue').default);
+Vue.component('option-item', require('./components/OptionItemComponent.vue').default);
+Vue.component('survey-instance', require('./components/SurveyInstanceComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +38,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    i18n
 });

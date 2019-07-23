@@ -1,55 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-    <div class="col">
-        <h1 class="display-4 text-center">
-            What's your favorite programming language?
-        </h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <p class="lead text-center">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div class="choices container-fluid">
-            <div class="choice row mt-2 mb-2">
-                <div class="key col-auto"><span>A</span></div>
-                <div class="title col">PHP</div>
-                <div class="check col-auto"></div>
-            </div>
-            <div class="choice row mt-2 mb-2">
-                <div class="key col-auto"><span>B</span></div>
-                <div class="title col">C#</div>
-                <div class="check col-auto"></div>
-            </div>
-            <div class="choice row mt-2 mb-2">
-                <div class="key col-auto"><span>C</span></div>
-                <div class="title col">Python</div>
-                <div class="check col-auto"></div>
-            </div>
-            <div class="choice selected row mt-2 mb-2">
-                <div class="key col-auto"><span>D</span></div>
-                <div class="title col">Javascript</div>
-                <div class="check col-auto"><i class="icon ion-md-checkmark"></i></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        Please select one
-    </div>
-</div>
-<hr />
-<div class="row">
-    <div class="col-md-3 ml-auto">
-        <button class="btn btn-primary btn-lg btn-block">{{ __('Send') }}</button>
-    </div>
-</div>
+  <survey-instance></survey-instance>
 @endsection
