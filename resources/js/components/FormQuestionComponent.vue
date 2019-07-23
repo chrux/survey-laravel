@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="form-group row mt-3">
             <div class="col">
-              <input type="text" class="form-control" name="question[title]" :placeholder="$t('Question')" v-model="questionTitle">
+              <input type="text" class="form-control" name="question[title]" :placeholder="$t('Question')" v-model="questionTitle" autofocus>
             </div>
           </div>
           <div class="form-group row mt-3">
@@ -28,8 +28,15 @@
             </div>
           </div>
           <div class="options">
-            <form-option-item :number="1"></form-option-item>
-            <form-option-item :number="2"></form-option-item>
+            <form-option-item
+              v-for="(choice, index) in choices"
+              :key="index"
+              :number="index+1"
+              :option="choice.option"
+              :isRemovable="choice.isRemovable"
+              ref="optionInputs"
+              @enter="handleEnter"
+              @remove="removeOption"></form-option-item>
           </div>
           <div class="row mt-3">
             <div class="col">
@@ -58,16 +65,40 @@ export default {
   data() {
     return {
       questionTitle: '',
+      // Show 2 empty options by default
+      choices: [
+        { option: { title: '' } },
+        { option: { title: '' } },
+      ]
     }
   },
   computed: {
     isValid() {
-      return this.questionTitle;
+      return this.questionTitle &&
+        this.choices.filter(choice => choice.option.title.trim().length > 0).length >= 2;
     }
   },
   methods: {
     newQuestion() {
-      alert(this.questionTitle);
+      console.log(this.questionTitle);
+      console.log(this.choices);
+    },
+    addOption() {
+      this.choices.push({ option: { title: '' }, isRemovable: true });
+    },
+    focusOption(idx) {
+      this.$refs.optionInputs[idx].focusInput();
+    },
+    handleEnter(option) {
+      const idx = this.choices.findIndex(choice => choice.option === option);
+      if (this.choices.length-1 === idx) {
+        this.addOption();
+      } else {
+        this.focusOption(idx + 1);
+      }
+    },
+    removeOption(option) {
+      this.choices = this.choices.filter(choice => choice.option !== option);
     }
   }
 };
