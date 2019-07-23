@@ -48,8 +48,8 @@
 </div>
 <hr />
 <div class="row">
-    <div class="col">
-        <button class="btn btn-primary btn-lg">{{ __('Send') }}</button>
+    <div class="col-md-3 ml-auto">
+        <button class="btn btn-primary btn-lg btn-block">{{ __('Send') }}</button>
     </div>
 </div>
 @endsection

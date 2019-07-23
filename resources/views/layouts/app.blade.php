@@ -2,7 +2,7 @@
 
 @section('main')
     @include('layouts.nav', ['class' => 'd-block d-sm-none text-right'])
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center position-ref full-height scrolleable">
         @include('layouts.nav', ['class' => 'd-none d-sm-block top-right'])
         <div class="container">
             @yield('content')
