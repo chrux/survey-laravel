@@ -13,13 +13,12 @@
 
 Route::get('/', function () {
     return redirect('home');
-});
+})->middleware('guest.id');
 
 Auth::routes();
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', 'VoteController@create')->name('home')->middleware('guest.id');
+Route::post('/vote', 'VoteController@store')->name('vote');
 
 Route::resource('questions', 'QuestionController');
     // ->only(['index', 'create', 'show', 'edit']);

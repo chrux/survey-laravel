@@ -2,25 +2,19 @@
   <div>
     <div class="row">
       <div class="col">
-        <h1 class="display-4 text-center">What's your favorite programming language?</h1>
+        <h1 class="display-4 text-center">{{ question.title }}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <p class="lead text-center">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+        <p class="lead text-center">{{ question.description }}</p>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="choices container-fluid">
           <!-- A. PHP -->
-          <option-item></option-item>
-          <!-- B. C# -->
-          <option-item></option-item>
-          <!-- C. Python -->
-          <option-item></option-item>
-          <!-- D. Javascript -->
-          <option-item></option-item>
+          <option-item v-for="(option, index) in question.options" :key="index" :option="option" :number="index+1"></option-item>
         </div>
       </div>
     </div>
@@ -39,6 +33,9 @@
 <script>
 export default {
   name: 'Survey',
+  props: {
+    question: Object,
+  },
   mounted() {
     console.log("Component mounted.");
   }
