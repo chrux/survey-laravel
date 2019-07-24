@@ -33,6 +33,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $options = $request['options'];
+        print_r($options);
     }    
 }
