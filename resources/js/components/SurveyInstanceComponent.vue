@@ -91,7 +91,6 @@ export default {
     },
     vote() {
       const params = { options: [...this.selectedOptions] };
-      console.log('params', params);
       axios.post(`/vote`, params)
         .then(() => this.voted = true);
         // .catch(e => console.log('e', e));

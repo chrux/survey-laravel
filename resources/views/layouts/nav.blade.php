@@ -4,7 +4,7 @@
   <a href="{{ route('questions.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
   @endif
   @if (in_array(request()->route()->getName(), ['home', 'questions.create', 'questions.show']))
-  <a href="{{ route('questions.index') }}">{{ __('Questions') }}</a>
+  <a href="{{ route('questions.index') }}">{{ __('Admin') }}</a>
   @else
   <a href="{{ route('home') }}">{{ __('Home') }}</a>
   @endif
