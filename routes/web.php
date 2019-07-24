@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'VoteController@create')->name('home')->middleware('guest.id');
-Route::post('/vote', 'VoteController@store')->name('vote');
+Route::post('/vote', 'VoteController@store')->name('vote')->middleware('guest.id');
 
 Route::resource('questions', 'QuestionController');
     // ->only(['index', 'create', 'show', 'edit']);

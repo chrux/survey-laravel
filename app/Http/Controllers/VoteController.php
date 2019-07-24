@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Option;
+use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -34,6 +36,11 @@ class VoteController extends Controller
     public function store(Request $request)
     {
         $options = $request['options'];
-        print_r($options);
+        $guest_id = $request->guest_id;
+        $vote = null;
+        foreach ($options as $option_id) {
+            Vote::create(compact('option_id', 'guest_id'));
+            Option::find($option_id)->increment('votes');
+        }
     }    
 }
