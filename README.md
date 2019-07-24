@@ -2,6 +2,10 @@
 
 by @chrux chtorrez@gmail.com
 
+## Demo
+
+https://simplesurvey-chrux.herokuapp.com/
+
 ## Instalation
 
 1. copy .env.example file into .env
