@@ -18,6 +18,9 @@ Questions
             <h5 class="card-title">{{ $question->title }}</h5>
             <p class="card-text">{{ $question->description }}</p>
             <p class="card-text"><small class="text-muted">Created {{ $question->created_at->format("F jS, Y \a\\t h:ia") }}</small></p>
+            <p class="card-text text-right">
+              <a href="{{ route('questions.show', $question) }}" class="btn btn-primary">Results</a>
+            </p>
           </div>
         </div>
         @endforeach

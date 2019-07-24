@@ -14,6 +14,8 @@ Vue.use(VueI18n);
 
 const i18n = new VueI18n({ locale: 'en' });
 
+import Chart from 'chart.js';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -29,6 +31,7 @@ Vue.component('form-option-item', require('./components/FormOptionItemComponent.
 Vue.component('form-question', require('./components/FormQuestionComponent.vue').default);
 Vue.component('option-item', require('./components/OptionItemComponent.vue').default);
 Vue.component('survey-instance', require('./components/SurveyInstanceComponent.vue').default);
+Vue.component('chart-component', require('./components/ChartComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
