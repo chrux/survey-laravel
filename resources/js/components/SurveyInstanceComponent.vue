@@ -4,6 +4,9 @@
       <div class="row">
         <div class="col">
           <h1 class="display-4 text-center">{{ $t('Thanks for your participation!') }}</h1>
+          <p class="text-center">
+            <a href="/home" class="btn btn-primary btn-lg">Continue</a>
+          </p>
         </div>
       </div>
     </div>
