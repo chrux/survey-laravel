@@ -15,9 +15,9 @@ Questions
         @foreach ($questions as $question)
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">{{ $question->title }}</h5>
+            <p class="card-text">{{ $question->description }}</p>
+            <p class="card-text"><small class="text-muted">Created {{ $question->created_at->format("F jS, Y \a\\t h:ia") }}</small></p>
           </div>
         </div>
         @endforeach

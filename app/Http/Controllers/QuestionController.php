@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -24,7 +24,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('questions.index');
+        return view('questions.index', ['questions' => Question::all()]);
     }
 
     /**
@@ -45,13 +45,20 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $question = new Question;
+        $question->title = $request['title'];
+        $question->description = $request['description'];
+        $question->maxCheck = $request['maxCheck'] ?? 1;
+        $question->save();
+        $question->options()->createMany($request['options']);
+
+        return $question;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
     public function show(Question $question)
@@ -62,7 +69,7 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
     public function edit(Question $question)
@@ -74,22 +81,27 @@ class QuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Question  $question
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->title = $request->question['title'];
+        $question->description = $request->question['description'];
+        $question->maxCheck = $request->question['maxCheck'] ?? 1;
+        $question->save();
+
+        return $question;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
     }
 }

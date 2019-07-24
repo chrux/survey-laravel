@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     handleKey(e) {
+      e && e.preventDefault();
       if (e.keyCode === 13) {
         this.$emit('enter', this.option);
       }

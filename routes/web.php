@@ -22,4 +22,6 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::resource('questions', 'QuestionController');
+    // ->only(['index', 'create', 'show', 'edit']);
+// Route::apiResource('questions', 'QuestionController');
 // middleware('auth')->
