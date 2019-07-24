@@ -51,7 +51,7 @@
               class="btn btn-primary btn-lg btn-block"
               type="button"
               :disabled="!isValid"
-              @click="newQuestion">{{ $t('Create') }}</button>
+              @click.once="newQuestion">{{ $t('Create') }}</button>
           </div>
         </div>
       </div>

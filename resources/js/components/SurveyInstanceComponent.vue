@@ -45,7 +45,7 @@
             type="button"
             class="btn btn-primary btn-lg btn-block"
             :disabled="!isValid"
-            @click="vote"
+            @click.once="vote"
             >{{ $t('Send') }}</button>
         </div>
       </div>
@@ -76,11 +76,11 @@ export default {
     },
     toggleOption(e) {
       const maxCheck = this.question.maxCheck || 1;
-      if (this.selectedOptions.length === maxCheck) {
-        return;
-      }
 
       if (e.selected) {
+        if (this.selectedOptions.length === maxCheck) {
+          return;
+        }
         this.selectedOptions.push(e.option.id);
       } else {
         this.selectedOptions = this.selectedOptions.filter(id => id !== e.option.id);
